@@ -1,44 +1,48 @@
-# Traffic Signal Control using DQN
+# 🚦 Traffic Signal Control using Reinforcement Learning (DQN)
 
-**Project:** Intelligent Traffic Light Control using Deep Q-Network (DQN)
-**Author:** (Replace with your name)
+An intelligent traffic management system built using **Deep Q-Learning (DQN)** to automatically control signal timing and reduce congestion.  
+The agent learns **when to switch signals** by observing real-time vehicle queue lengths at a four-way intersection.  
 
-## Overview
-This repository contains a self-contained simulation and DQN implementation to learn traffic-signal control policies at a single 4-way intersection.
+---
 
-## Contents
-- `traffic_env.py` - Custom Gymnasium environment simulating a 4-way intersection.
-- `replay_buffer.py` - Experience replay buffer implementation.
-- `agent_dqn.py` - DQN agent (PyTorch) with network, select_action, and train functions.
-- `train.py` - Training loop: runs episodes, training the agent and saving checkpoints.
-- `evaluate.py` - Evaluate a trained model and print metrics; optional visualization.
-- `utils.py` - Helper utilities (plots, seed setting).
-- `requirements.txt` - Python dependencies.
-- `README.md` - This file.
+## 🧠 Problem Statement
 
-## Quickstart (local)
-1. Create and activate a virtual environment (recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-2. Train the agent:
-   ```bash
-   python train.py --episodes 1000 --save-dir models/
-   ```
-3. Evaluate the agent (after training):
-   ```bash
-   python evaluate.py --model models/dqn_checkpoint.pt --episodes 50
-   ```
+Traffic congestion at intersections is a major urban challenge.  
+Traditional signal systems use fixed timers — they **don’t adapt** to dynamic vehicle flow.  
 
-## Git / GitHub workflow (local)
+This project applies **Reinforcement Learning** to allow a traffic signal agent to:
+- Learn the **optimal switching policy**
+- Minimize **average waiting time**
+- Improve **traffic flow efficiency**
+
+---
+
+## 🧩 Project Overview
+
+| Component | Description |
+|------------|-------------|
+| **Environment** | Custom Gym environment simulating a 4-way intersection |
+| **Agent** | DQN (Deep Q-Network) with replay buffer and ε-greedy exploration |
+| **Reward** | Negative of total waiting time (to encourage faster flow) |
+| **Visualization** | Pygame-based intersection display with queue bars |
+| **Frameworks** | PyTorch, Gymnasium, Numpy, Matplotlib, Pygame |
+
+---
+
+## 🧰 Tech Stack
+
+- 🧠 **Python 3.10+**
+- 🧩 **Gymnasium** — RL environment interface  
+- 🔥 **PyTorch** — DQN neural network  
+- 📊 **Matplotlib** — Training visualization  
+- 🎮 **Pygame** — Traffic signal simulation  
+- 🧮 **Numpy**, **tqdm**, **random**
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the Repository
 ```bash
-git init
-git add .
-git commit -m "Initial project scaffold: custom env + DQN agent + training loop"
-# Create a repo on GitHub and push:
-git remote add origin https://github.com/<your-username>/traffic-rl.git
-git branch -M main
-git push -u origin main
-```
+git clone https://github.com/<your-username>/traffic-signal-rl.git
+cd traffic-signal-rl
