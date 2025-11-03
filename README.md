@@ -22,7 +22,7 @@ This project applies **Reinforcement Learning** to allow a traffic signal agent 
 | Component | Description |
 |------------|-------------|
 | **Environment** | Custom Gym environment simulating a 4-way intersection |
-| **Agent** | DQN (Deep Q-Network) with replay buffer and ε-greedy exploration |
+| **Agent** | SARSA |
 | **Reward** | Negative of total waiting time (to encourage faster flow) |
 | **Visualization** | Pygame-based intersection display with queue bars |
 | **Frameworks** | PyTorch, Gymnasium, Numpy, Matplotlib, Pygame |
